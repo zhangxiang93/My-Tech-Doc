@@ -2,6 +2,7 @@
 `$ grep -r "192.168.1.5" /etc/`   或   `$ grep -R "192.168.1.5" /etc/`
 
 输出：
+
 ![](http://p6.qhimg.com/t01d022a1352fbd1f9b.png)
 
 可以禁止文件路径输出：
@@ -19,7 +20,9 @@
 `$ grep -l  'main'  *.c`  包含该文本的后缀是.c的文件名输出
 `$ grep -l  'main'  *`  包含该文本的当前目录下所有文件的文件名输出
 `$ grep --color  'vivek'  /etc/passwd`  包含该文本的该目录下文件的文件名，以及该文本彩色输出
+
 ![](http://p9.qhimg.com/t0120b09e2f75fe1794.png)
+
 ` *搜索的文本可以加引号也可以不加`
  
  
