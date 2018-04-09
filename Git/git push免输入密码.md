@@ -12,5 +12,5 @@
 另一种方式就是改变`remote`远程`url`，如下：
 ```
 $ git remote rm origin  
-$ git remote add origin git@github.com:itmyhome2013/blog.git  
+$ git remote add origin git@github.com:yourself.git  
 ```
