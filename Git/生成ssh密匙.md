@@ -25,6 +25,6 @@ $ ssh -T git@github.com
 #### 多个key
 指定名称保存
 ```
-ssh-keygen -t rsa -f ~/.ssh/id_rsa.note -C 'email地址'
+ssh-keygen -t rsa -f ~/.ssh/id_rsa.note
 ```
 本地就会有两个文件`id_rsa.note`和`id_rsa.note.pub`
