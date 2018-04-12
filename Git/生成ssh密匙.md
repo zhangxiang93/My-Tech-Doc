@@ -39,11 +39,11 @@ touch config
  Host My-Tech-Doc.git
  HostName My-Tech-Doc.git
  PreferredAuthentications publickey
- IdentityFile ~/.ssh/doc
+ IdentityFile ~/.ssh/own_rsa
  # github
  Host github.com
  HostName github.com
  PreferredAuthentications publickey
  IdentityFile ~/.ssh/id_rsa
 ```
-这里的`My-Tech-Doc.git`，就是你当前`git`项目地址的后缀名
+这里的`own_rsa`，就是你自己`git`用的，另外一个就是公司用的
