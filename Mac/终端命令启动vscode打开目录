@@ -6,3 +6,4 @@ export PATH=/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:$P
 #保存退出
 code . #启动vscode，当前目录也被打开了
 ```
+就这么简单
