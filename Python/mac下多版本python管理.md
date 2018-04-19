@@ -3,9 +3,11 @@
 
 
 #### 版本管理工具pyenv
-![文章一：http://zhangzhk.com/2017/10/19/build-python-development-environment-in-mac/](http://zhangzhk.com/2017/10/19/build-python-development-environment-in-mac/)
 
-![文章二：https://github.com/eleplus/blog/issues/4](https://github.com/eleplus/blog/issues/4)
+[文章一：http://zhangzhk.com/2017/10/19/build-python-development-environment-in-mac/](http://zhangzhk.com/2017/10/19/build-python-development-environment-in-mac/)
+
+
+[文章二：https://github.com/eleplus/blog/issues/4](https://github.com/eleplus/blog/issues/4)
 
 
 
