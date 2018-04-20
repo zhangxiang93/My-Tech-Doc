@@ -76,7 +76,7 @@ sudo npm install hexo-server --save
 ```
 
 ### 关联Hexo与Github
-生成与`github`关联的`ssh`密匙，参考我的`git`文章:[生成ssh密匙](https://github.com/zhangxiang93/My-Tech-Doc/blob/master/Git/%E7%94%9F%E6%88%90ssh%E5%AF%86%E5%8C%99.md)
+生成与`github`关联的`ssh`密匙，参考我的`git`文章：[生成ssh密匙](https://github.com/zhangxiang93/My-Tech-Doc/blob/master/Git/%E7%94%9F%E6%88%90ssh%E5%AF%86%E5%8C%99.md)
 
 把`ssh-key`添加到`github`，然后输入
 ```
