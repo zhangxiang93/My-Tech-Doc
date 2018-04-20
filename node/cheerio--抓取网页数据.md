@@ -63,3 +63,5 @@ server.download(url, function(data) {
 `node index.js`
 
 #### 结果
+
+可以看到抓取的网页数据结果。
