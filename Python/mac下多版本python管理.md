@@ -42,3 +42,13 @@ pyenv local --unset
 ```
 pyenv uninstall 3.6.3
 ```
+
+#### 版本切换失效解决
+安装了zsh主题以后，用`pyenv`切换`python`版本失效了
+解决办法:
+打开`~/.zshrc`文件，加入
+```
+export PYENV_ROOT=~/.pyenv
+export PATH=$PYENV_ROOT/shims:$PATH
+```
+重启下终端即可
