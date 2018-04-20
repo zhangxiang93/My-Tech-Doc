@@ -22,10 +22,10 @@ $ ssh -T git@github.com
 ```
 提示成功，`ok`
 
-#### 多个key
+#### 多个git帐号key
 指定名称保存
 ```
-ssh-keygen -t rsa -C 'Your Email Address' -f ~/.ssh/doc
+ssh-keygen -t rsa -C 'Your Email Address' -f ~/.ssh/own_rsa  // -C 'Your Email Address'也可以不设置
 ```
 本地就会多两个文件，注意`name`j就是你要保存文件的名称，如果不设置的话，默认都是一样的名字，容易覆盖
 
@@ -36,13 +36,13 @@ touch config
 添加以下内容
 ```
  # document
- Host My-Tech-Doc.git
- HostName My-Tech-Doc.git
- PreferredAuthentications publickey
- IdentityFile ~/.ssh/own_rsa
- # github
  Host github.com
  HostName github.com
+ PreferredAuthentications publickey
+ IdentityFile ~/.ssh/own_rsa
+ # gitlib
+ Host gitlib.com
+ HostName gitlib.com
  PreferredAuthentications publickey
  IdentityFile ~/.ssh/id_rsa
 ```
