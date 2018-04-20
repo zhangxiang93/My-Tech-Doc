@@ -127,7 +127,7 @@ hexo d
 
 ### 自定义域名
 这里可以看个人意愿，如果不想额外支出，就访问`github`默认地址也可以。
-1. 阿里云买个域名，博客地址重定向到该域名（即绑定），我自己的：[zxxiang.top](zxxiang.top)
+1. 阿里云买个域名，博客地址重定向到该域名（即绑定），我自己的：[zxxiang.top](http://zxxiang.top)
 2. 在`Github`根目录下新建一个`CNAME`的文本文件，打开文件，输入
 ```
 zxxiang.top
