@@ -268,57 +268,67 @@ $ sudo docker stop $ID
 docker run -d -p 127.0.0.1:33301:22 centos6-ssh
 ```
 #### `run` 命令详解
+```  
+03.  -d, --detach=false         指定容器运行于前台还是后台，默认为false     
+04.  -i, --interactive=false   打开STDIN，用于控制台交互    
+05.  -t, --tty=false            分配tty设备，该可以支持终端登录，默认为false    
+06.  -u, --user=""              指定容器的用户    
+07.  -a, --attach=[]            登录容器（必须是以docker run -d启动的容器）  
+08.  -w, --workdir=""           指定容器的工作目录   
+09.  -c, --cpu-shares=0        设置容器CPU权重，在CPU共享场景使用    
+10.  -e, --env=[]               指定环境变量，容器中可以使用该环境变量    
+11.  -m, --memory=""            指定容器的内存上限    
+12.  -P, --publish-all=false    指定容器暴露的端口    
+13.  -p, --publish=[]           指定容器暴露的端口   
+14.  -h, --hostname=""          指定容器的主机名    
+15.  -v, --volume=[]            给容器挂载存储卷，挂载到容器的某个目录    
+16.  --volumes-from=[]          给容器挂载其他容器上的卷，挂载到容器的某个目录  
+17.  --cap-add=[]               添加权限，权限清单详见：http://linux.die.net/man/7/capabilities    
+18.  --cap-drop=[]              删除权限，权限清单详见：http://linux.die.net/man/7/capabilities    
+19.  --cidfile=""               运行容器后，在指定文件中写入容器PID值，一种典型的监控系统用法    
+20.  --cpuset=""                设置容器可以使用哪些CPU，此参数可以用来容器独占CPU    
+21.  --device=[]                添加主机设备给容器，相当于设备直通    
+22.  --dns=[]                   指定容器的dns服务器    
+23.  --dns-search=[]            指定容器的dns搜索域名，写入到容器的/etc/resolv.conf文件    
+24.  --entrypoint=""            覆盖image的入口点    
+25.  --env-file=[]              指定环境变量文件，文件格式为每行一个环境变量    
+26.  --expose=[]                指定容器暴露的端口，即修改镜像的暴露端口    
+27.  --link=[]                  指定容器间的关联，使用其他容器的IP、env等信息    
+28.  --lxc-conf=[]              指定容器的配置文件，只有在指定--exec-driver=lxc时使用    
+29.  --name=""                  指定容器名字，后续可以通过名字进行容器管理，links特性需要使用名字    
+30.  --net="bridge"             容器网络设置:  
+31.                                bridge 使用docker daemon指定的网桥       
+32.                                host    //容器使用主机的网络    
+33.                                container:NAME_or_ID  >//使用其他容器的网路，共享IP和PORT等网络资源    
+34.                                none 容器使用自己的网络（类似--net=bridge），但是不进行配置   
+35.  --privileged=false         指定容器是否为特权容器，特权容器拥有所有的capabilities    
+36.  --restart="no"             指定容器停止后的重启策略:  
+37.                                no：容器退出时不重启    
+38.                                on-failure：容器故障退出（返回值非零）时重启   
+39.                                always：容器退出时总是重启    
+40.  --rm=false                 指定容器停止后自动删除容器(不支持以docker run -d启动的容器)    
+41.  --sig-proxy=true           设置由代理接受并处理信号，但是SIGCHLD、SIGSTOP和SIGKILL不能被代理
 ```
--a, --attach=[]            Attach to STDIN, STDOUT or STDERR 指定标准输入输出内容类型，可选 STDIN/STDOUT/STDERR 三项
-  --add-host=[]              Add a custom host-to-IP mapping (host:ip)
-  --blkio-weight=0            Block IO (relative weight), between 10 and 1000
-  -c, --cpu-shares=0          CPU shares (relative weight)
-  --cap-add=[]                Add Linux capabilities
-  --cap-drop=[]              Drop Linux capabilities
-  --cgroup-parent=            Optional parent cgroup for the container
-  --cidfile=                  Write the container ID to the file
-  --cpu-period=0              Limit CPU CFS (Completely Fair Scheduler) period
-  --cpu-quota=0              Limit the CPU CFS quota
-  --cpuset-cpus=              CPUs in which to allow execution (0-3, 0,1) 绑定容器到指定CPU运行
-  --cpuset-mems=              MEMs in which to allow execution (0-3, 0,1) 绑定容器到指定MEM运行
-  -d, --detach=false          Run container in background and print container ID 后台运行容器，并返回容器ID
-  --device=[]                Add a host device to the container
-  --dns=[]                    Set custom DNS servers 指定容器使用的DNS服务器，默认和宿主一致
-  --dns-search=[]            Set custom DNS search domains 指定容器DNS搜索域名，默认和宿主一致
-  -e, --env=[]                Set environment variables 设置环境变量
-  --entrypoint=              Overwrite the default ENTRYPOINT of the image
-  --env-file=[]              Read in a file of environment variables 从指定文件读入环境变量
-  --expose=[]                Expose a port or a range of ports
-  -h, --hostname=            Container host name 指定容器的hostname
-  --help=false                Print usage
-  -i, --interactive=false    Keep STDIN open even if not attached 以交互模式运行容器，通常与 -t 同时使用
-  --ipc=                      IPC namespace to use
-  -l, --label=[]              Set meta data on a container
-  --label-file=[]            Read in a line delimited file of labels
-  --link=[]                  Add link to another container
-  --log-driver=              Logging driver for container
-  --log-opt=[]                Log driver options
-  --lxc-conf=[]              Add custom lxc options
-  -m, --memory=              Memory limit
-  --mac-address=              Container MAC address (e.g. 92:d0:c6:0a:29:33)
-  --memory-swap=              Total memory (memory + swap), '-1' to disable swap
-  --name=                    Assign a name to the container 为容器指定一个名称
-  --net=bridge                Set the Network mode for the container  指定容器的网络连接类型，支持 bridge/host/none/container:<name|id> 四种类型
-  --oom-kill-disable=false    Disable OOM Killer
-  -P, --publish-all=false    Publish all exposed ports to random ports
-  -p, --publish=[]            Publish a container's port(s) to the host
-  --pid=                      PID namespace to use
-  --privileged=false          Give extended privileges to this container
-  --read-only=false          Mount the container's root filesystem as read only
-  --restart=no                Restart policy to apply when a container exits
-  --rm=false                  Automatically remove the container when it exits
-  --security-opt=[]          Security Options
-  --sig-proxy=true            Proxy received signals to the process
-  -t, --tty=false            Allocate a pseudo-TTY 为容器重新分配一个伪输入终端，通常与 -i 同时使用
-  -u, --user=                Username or UID (format: <name|uid>[:<group|gid>])
-  --ulimit=[]                Ulimit options
-  --uts=                      UTS namespace to use
-  -v, --volume=[]            Bind mount a volume
-  --volumes-from=[]          Mount volumes from the specified container(s)
-  -w, --workdir=              Working directory inside the container
+
+---
+### 实例
+##### 使用`docker`镜像`nginx:latest`以后台模式启动一个容器,并将容器命名为`mynginx`
+```
+docker run --name mynginx -d nginx:latest
+```
+
+##### 使用镜像`nginx:latest`以后台模式启动一个容器,并将容器的`80`端口映射到主机随机端口
+```
+docker run -P -d nginx:latest  
+```
+
+##### 使用镜像`nginx:latest`以后台模式启动一个容器,将容器的`80`端口映射到主机的`80`端口,主机的目录`/data`映射到容器的`/data`
+```
+docker run -p 80:80 -v /data:/data -d nginx:latest  
+```
+
+##### 使用镜像`nginx:latest`以交互模式启动一个容器,在容器内执行`/bin/bash`命令
+```
+runoob@runoob:~$ docker run -it nginx:latest /bin/bash  
+root@b8573233d675:/# 
 ```
