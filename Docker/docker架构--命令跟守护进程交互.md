@@ -8,7 +8,7 @@
 * `Docker命令行(docker CLI)`是与`Docker`守护进程进行交互的主要工具。
 
 ### `Docker`是`C/S`架构
-`Docker`是`Client/Serve`r架构。其中`Docker`守护进程是服务端，`Docker`命令行是众多客户端之一。事实上，还有很多第三方的`Docker`客户端。
+`Docker`是`Client/Server`架构。其中`Docker`守护进程是服务端，`Docker`命令行是众多客户端之一。事实上，还有很多第三方的`Docker`客户端。
 
 ### Docker命令行与守护进程如何交互
 
