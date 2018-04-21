@@ -10,8 +10,6 @@ docker version
 docker info
 # 日志信息
 docker logs
-# 故障检查
-service  docker  status
 # 启动关闭docker
 sudo service docker start|stop
 ```
