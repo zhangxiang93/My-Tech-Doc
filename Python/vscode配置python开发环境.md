@@ -1,5 +1,6 @@
-#### vscode配置python开发环境
----
+vscode配置python开发环境
+========
+
 打开终端
 
 安装python
@@ -25,8 +26,8 @@ pip install pylint  //不推荐，过于变态，规则定的太死，一般把�
 "python.linting.pylintEnabled": false
 ```
 
-#### 运行
----
+运行
+====
 
 默认按两次`F5`即可在`vscode`里看到运行结果
 如果想按一次`F5`就运行，可以在launch.json文件里改配置
