@@ -16,6 +16,9 @@
 #### 命令
 ##### 切换版本
 ```
+# 先查看本机安装的python版本
+pyenv versions
+
 # 对所有的Shell全局有效，会把版本号写入到~/.pyenv/version文件中
 pyenv global 3.6.3
 
