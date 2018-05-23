@@ -12,9 +12,7 @@ python  3.6.5
 ```
 
 #### 安装办法详解
-1. 下载`basemap`安装包
-
-[https://pypi.org/project/basemap/](https://pypi.org/project/basemap/)
+1. 下载`basemap`安装包，地址：[https://pypi.org/project/basemap/](https://pypi.org/project/basemap/)
 
 2. 解压到本地，打开终端，`cd`到该目录下
 3. 安装`geos`
