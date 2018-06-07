@@ -2,6 +2,7 @@
 `$ grep -r "192.168.1.5" /etc/`   或   `$ grep -R "192.168.1.5" /etc/`
 
 输出：
+
 ![](http://p6.qhimg.com/t01d022a1352fbd1f9b.png)
 
 可以禁止文件路径输出：
