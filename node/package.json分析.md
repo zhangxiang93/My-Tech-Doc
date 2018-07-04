@@ -1,0 +1,1 @@
+[直接点击文章](http://javascript.ruanyifeng.com/nodejs/packagejson.html)
