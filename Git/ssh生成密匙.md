@@ -18,7 +18,7 @@ id_rsa      id_rsa.pub
 ```
 测试执行下面命令
 ```
-$ ssh -T git@github.com  //这里的@后面部门是你config里配置的host，不同的名字，这里可以是不同的，比如ssh -T git@doc.github.com
+$ ssh -T git@github.com  
 ```
 提示成功，`ok`。首次会自动写入`known_hosts`文件。
 
