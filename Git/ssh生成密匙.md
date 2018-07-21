@@ -28,7 +28,11 @@ $ ssh -T git@github.com  //这里的@后面部门是你config里配置的host，
 ssh-keygen -t rsa -C 'Your Email Address' -f ~/.ssh/own_rsa  // -C 'Your Email Address'也可以不设置
 ```
 本地就会多两个文件，注意`name`j就是你要保存文件的名称，如果不设置的话，默认都是一样的名字，容易覆盖
-
+#### 把私钥添加到git
+```
+ssh-add -K ~/.ssh/doc_rsa
+```
+#### 配置config
 然后，在`~/.ssh/`下新建`config`文件
 ```
 touch config
