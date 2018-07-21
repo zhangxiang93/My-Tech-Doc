@@ -16,11 +16,11 @@ $ cd ~/.ssh
 ~/.ssh $ ls
 id_rsa      id_rsa.pub
 ```
-测试
+测试执行下面命令
 ```
 $ ssh -T git@github.com
 ```
-提示成功，`ok`
+提示成功，`ok`。首次会自动写入`known_hosts`文件。
 
 #### 多个git帐号key
 指定名称保存
@@ -38,12 +38,15 @@ touch config
  # document
  Host github.com
  HostName github.com
+ User 邮箱名
+ PreferredAuthentications publickey
+ IdentityFile ~/.ssh/doc_rsa
+
+# project
+ Host github.com
+ HostName github.com
+ User 邮箱名
  PreferredAuthentications publickey
  IdentityFile ~/.ssh/own_rsa
- # gitlib
- Host gitlib.com
- HostName gitlib.com
- PreferredAuthentications publickey
- IdentityFile ~/.ssh/id_rsa
+
 ```
-这里的`own_rsa`，就是你自己`git`用的，另外一个就是公司用的
