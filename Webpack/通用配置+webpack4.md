@@ -129,3 +129,8 @@ yarn add extract-text-webpack-plugin@next -D
 ```
 yarn add mini-css-extract-plugin -D
 ```
+
+#### 编译
+![图示](../photos/webpack.png)
+
+这里`common.js`就是两个入口文件公共部门，分割成`chunk`，避免重复加载。
