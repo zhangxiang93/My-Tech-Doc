@@ -19,9 +19,10 @@ const webpack = require("webpack")
 const chalk = require("chalk")
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 const CleanWebpackPlugin = require("clean-webpack-plugin")
-const UglifyjsWebpackPlugin = require("uglifyjs-webpack-plugin")
 const ExtractTextWebpackPlugin = require("extract-text-webpack-plugin")
-const ProgressBarPlugin = require('progress-bar-webpack-plugin')
+const ProgressBarPlugin = require("progress-bar-webpack-plugin")
+const CompressionWebpackPlugin  = require("compression-webpack-plugin")
+const devStr = "mode == 'development'" ? "source-map" : ""
 
 module.exports = {
     entry: {
@@ -32,6 +33,10 @@ module.exports = {
         filename: "static/js/[name].js",
         path: path.resolve(__dirname, "dist"),
         publicPath: "/"
+    },
+    devtool: devStr,
+    performance: { 
+        hints: false  //文件超限提示
     },
     module: {
         rules: [
@@ -93,7 +98,9 @@ module.exports = {
             hash: true,
             chunks: ['base', 'common'],
             minify: {
-              removeAttributeQuotes: true
+                removeComments: true,        //去注释
+                collapseWhitespace: true,    //压缩空格
+                removeAttributeQuotes: true  //去除属性引用
             }
         }),
         new ExtractTextWebpackPlugin({
@@ -101,10 +108,18 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(), //用户名替代id
-        new UglifyjsWebpackPlugin(), //js压缩
         new ProgressBarPlugin({
             format: '  build [:bar] ' + chalk.green.bold(':percent') + ' (:elapsed seconds)'
-        }) //显示打包进度
+        }), //显示打包进度
+        new CompressionWebpackPlugin({ //gzip 压缩
+            asset: '[path].gz[query]',
+            algorithm: 'gzip',
+            test: new RegExp(
+                '\\.(js|css)$'    //压缩 js 与 css
+            ),
+            threshold: 10240,
+            minRatio: 0.8
+        })
     ],
     optimization: {
         splitChunks: {
