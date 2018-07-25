@@ -38,6 +38,14 @@ module.exports = {
     performance: { 
         hints: false  //文件超限提示
     },
+    resolve: {  //导入的时候不用写拓展名
+        extensions: [' ', '.js', '.json', '.vue', '.scss', '.css']
+    },
+    watchOptions: {
+        ignored: /node_modules/, //不需要实时检测的内容
+        aggregateTimeout: 300, //防止重复保存频繁重新编译,300ms内重复保存不打包
+        poll: 1000  //每秒询问的文件变更的次数
+    },
     module: {
         rules: [
             {
@@ -121,7 +129,7 @@ module.exports = {
             minRatio: 0.8
         })
     ],
-    optimization: {
+    optimization: { //细粒度的缓存策略控制
         splitChunks: {
             cacheGroups: {
                 commons: {
@@ -133,6 +141,13 @@ module.exports = {
                 }
             }
         }
+    },
+    devServer:{
+        inline: true,
+        compress: true,
+        host: '127.0.0.1',
+        port: 2500,
+        historyApiFallback: true
     }
 }
 ```
