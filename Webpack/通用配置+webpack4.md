@@ -112,7 +112,7 @@ module.exports = {
             }
         }),
         new ExtractTextWebpackPlugin({
-            filename: 'static/css/[name].[hash].css'
+            filename: 'static/css/[name].[hash:10].css'
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(), //用户名替代id
