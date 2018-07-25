@@ -38,6 +38,7 @@ ssh-add -K ~/.ssh/doc_rsa
 然后，在`~/.ssh/`下新建`config`文件
 ```
 touch config
+subl -a config
 ```
 添加以下内容
 ```
