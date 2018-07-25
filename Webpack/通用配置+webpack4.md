@@ -14,15 +14,16 @@
 
 #### 通用配置
 ```
-const path = require("path")
-const webpack = require("webpack")
-const chalk = require("chalk")
-const HtmlWebPackPlugin = require("html-webpack-plugin")
-const CleanWebpackPlugin = require("clean-webpack-plugin")
-const ExtractTextWebpackPlugin = require("extract-text-webpack-plugin")
-const ProgressBarPlugin = require("progress-bar-webpack-plugin")
+const path                      = require("path")
+const webpack                   = require("webpack")
+const chalk                     = require("chalk")
+const HtmlWebPackPlugin         = require("html-webpack-plugin")
+const CleanWebpackPlugin        = require("clean-webpack-plugin")
+const ExtractTextWebpackPlugin  = require("extract-text-webpack-plugin")
+const ProgressBarPlugin         = require("progress-bar-webpack-plugin")
 const CompressionWebpackPlugin  = require("compression-webpack-plugin")
-const devStr = "mode == 'development'" ? "source-map" : ""
+const VueLoaderPlugin           = require('vue-loader/lib/plugin')
+const devStr                    = "mode == 'development'" ? "source-map" : ""
 
 module.exports = {
     entry: {
