@@ -30,6 +30,8 @@ ssh-keygen -t rsa -C 'Your Email Address' -f ~/.ssh/own_rsa  // -C 'Your Email A
 本地就会多两个文件，注意`name`j就是你要保存文件的名称，如果不设置的话，默认都是一样的名字，容易覆盖
 #### 把私钥添加到git
 ```
+ssh-add -D  //杀掉之前缓存的key
+ssh-add -l  //检查你要保存的key
 ssh-add -K ~/.ssh/doc_rsa
 ```
 #### 配置config
@@ -42,14 +44,14 @@ touch config
  # document
  Host doc.github.com
  HostName github.com
- User 邮箱名
+ User git
  PreferredAuthentications publickey
  IdentityFile ~/.ssh/doc_rsa
 
 # project
  Host own.github.com
  HostName github.com
- User 邮箱名
+ User git
  PreferredAuthentications publickey
  IdentityFile ~/.ssh/own_rsa
 
