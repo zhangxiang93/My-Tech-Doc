@@ -47,20 +47,23 @@ module.exports = {
         aggregateTimeout: 300, //防止重复保存频繁重新编译,300ms内重复保存不打包
         poll: 1000  //每秒询问的文件变更的次数
     },
+    externals: { //防止将某些 import 的包(package)打包到 bundle 中，而是在运行时(runtime)再去从外部获取这些扩展依赖(external dependencies)。
+        'vue': 'Vue',
+        'vue-resource': 'VueResource',
+        'vue-router': 'VueRouter',
+        'vuex': 'Vuex',
+        'jquery': 'jquery',
+    },
     module: {
         rules: [
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader"
-                }
+                use: "babel-loader"
             },
             {
                 test: /\.html$/,
-                use: {
-                    loader: "html-loader"
-                }
+                use: "html-loader"
             },
             {
                 test: /\.(scss|css)$/,
