@@ -17,6 +17,7 @@ yarn == yarn install
 #### 其他命令
 ```
 yarn add 包名 [--dev/D]      添加依赖包安装
+yarn global add 包名         添加全局包
 yarn bin                    显示yarn安装目录
 yarn cache  [ls/dir/clean]  显示包缓存（列表/路径/清理）
 yarn clean                  清理不需要的依赖文件
