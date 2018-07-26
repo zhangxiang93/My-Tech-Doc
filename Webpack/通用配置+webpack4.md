@@ -11,6 +11,11 @@
 "react": "^16.4.1",
 "react-dom": "^16.4.1"
 ```
+or
+```
+"vue": "^2.5.16",
+"vue-loader": "^15.2.6",
+```
 
 #### 通用配置
 ```
@@ -22,7 +27,8 @@ const CleanWebpackPlugin        = require("clean-webpack-plugin")
 const ExtractTextWebpackPlugin  = require("extract-text-webpack-plugin")
 const ProgressBarPlugin         = require("progress-bar-webpack-plugin")
 const CompressionWebpackPlugin  = require("compression-webpack-plugin")
-const VueLoaderPlugin           = require('vue-loader/lib/plugin')
+/***vue***/
+//const VueLoaderPlugin           = require('vue-loader/lib/plugin')
 const devStr                    = "mode == 'development'" ? "source-map" : ""
 
 module.exports = {
@@ -71,11 +77,30 @@ module.exports = {
                     fallback: 'style-loader',
                     use: ['css-loader', 'postcss-loader', 'sass-loader']
                 })
-            }
+            },
+            /***vue***
+            {
+                test: /\.(scss|css)$/,
+                use: ExtractTextWebpackPlugin.extract({
+                    fallback: 'vue-style-loader',
+                    use: ['css-loader', 'postcss-loader', 'sass-loader']
+                })
+            },
+            {
+                test: /\.vue$/,
+                use: 'vue-loader'
+            },
+            {
+                test: /\.pug$/,
+                use: 'pug-plain-loader'
+            },
+            */
         ]
     },
     plugins: [
         new CleanWebpackPlugin(["dist"]),
+        /***vue***/
+        //new VueLoaderPlugin(),
         new HtmlWebPackPlugin({
             template: path.resolve(__dirname, "src", "index.html"), //模板
             filename: "index.html",
