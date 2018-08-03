@@ -46,7 +46,10 @@ module.exports = {
         hints: false  //文件超限提示
     },
     resolve: {  //导入的时候不用写拓展名
-        extensions: [' ', '.js', '.json', '.vue', '.scss', '.css']
+        extensions: [' ', '.js', '.json', '.vue', '.scss', '.css'],
+        alias: {  //别名，import引入就不用../../src/templates
+            Templates: path.resolve(__dirname, 'src/templates/')
+        }
     },
     watchOptions: {
         ignored: /node_modules/, //不需要实时检测的内容
