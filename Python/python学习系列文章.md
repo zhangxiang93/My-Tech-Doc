@@ -16,11 +16,11 @@
 
 <a href="https://zhuanlan.zhihu.com/p/31884764" target="_blank">python_06_字符串进阶</a>
 
-<a href="(http://zhuanlan.zhihu.com/p/29318105" target="_blank">python_07_字符编码历史
+<a href="(http://zhuanlan.zhihu.com/p/29318105" target="_blank">python_07_字符编码历史</a>
 
 <a href="https://zhuanlan.zhihu.com/p/31920527" target="_blank">python_08_字符编码</a>
 
-<a href="(http://zhuanlan.zhihu.com/p/31954553" target="_blank">python_09_文件操作
+<a href="(http://zhuanlan.zhihu.com/p/31954553" target="_blank">python_09_文件操作</a>
 
 <a href="https://zhuanlan.zhihu.com/p/32475317" target="_blank">python_10_动态类型与共享引用</a>
 
