@@ -22,6 +22,7 @@ Shift + Alt + (drag mouse)   拖动选中范围所有尾部显示光标
 ```
 Shift + Alt + F     格式化代码
 Ctrl + K Ctrl + F   格式化选中的代码
+shift + ctrl(command) + L 全选内容
 ```
 
 ### 常用插件
