@@ -5,7 +5,6 @@
 
 ### 第一季
 [python_01_列表](https://zhuanlan.zhihu.com/p/29452562)
-<https://zhuanlan.zhihu.com/p/29452562>
 
 [python_02_字典](https://zhuanlan.zhihu.com/p/31582406)
 
